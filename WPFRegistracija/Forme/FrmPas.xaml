@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPFRegistracija.Forme.FrmPas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFRegistracija.Forme"
+        mc:Ignorable="d"
+        Title="Pas" Height="710" Width="855">
+    <Grid Margin="0,0,210,168">
+        <Label Content="Ime" HorizontalAlignment="Left" Margin="33,36,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="imeUnos" HorizontalAlignment="Left" Margin="81,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Godine" HorizontalAlignment="Left" Margin="33,81,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="gidineUnos" HorizontalAlignment="Left" Margin="86,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Pol" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="polUnos" HorizontalAlignment="Left" Margin="86,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Vlasnik" HorizontalAlignment="Left" Margin="288,36,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="vlasniOdabir" HorizontalAlignment="Left" Margin="350,37,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="PunoIme" SelectedValuePath="Id"/>
+        <Label Content="Rasa" HorizontalAlignment="Left" Margin="288,89,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="rasaOdabir" HorizontalAlignment="Left" Margin="350,94,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Naziv" SelectedValuePath="Id"/>
+        <DataGrid x:Name="psiPrikaz" AutoGenerateColumns="False" Margin="33,232,0,66" SelectionChanged="vlasnici_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" />
+                <DataGridTextColumn Header="RasaId" Binding="{Binding RasaId}" />
+                <DataGridTextColumn Header="Godine" Binding="{Binding Godine}" />
+                <DataGridTextColumn Header="Pol" Binding="{Binding Pol}" />
+                <DataGridTextColumn Header="IdVlasnika" Binding="{Binding IdVlasnika}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="unesiBtn" Content="Unesi" HorizontalAlignment="Left" Margin="37,187,0,0" VerticalAlignment="Top" Click="unesiBtn_Click"/>
+        <Button x:Name="izmeniBtn" Content="Izmeni" HorizontalAlignment="Left" Margin="124,187,0,0" VerticalAlignment="Top" Click="izmeniBtn_Click"/>
+        <Button x:Name="obrisiBtn" Content="Obrisi" HorizontalAlignment="Left" Margin="227,187,0,0" VerticalAlignment="Top" Click="obrisiBtn_Click"/>
+    </Grid>
+</Window>
